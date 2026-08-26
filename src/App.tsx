@@ -139,7 +139,7 @@ export default function App() {
                 <img src="/logo.png" className="w-64 opacity-50 grayscale" alt="" />
                 <div className="absolute inset-0 bg-gradient-to-t from-jl-black to-transparent"></div>
                 <div className="absolute bottom-10 left-10 text-left">
-                  <p className="text-white font-black text-5xl tracking-tighter">7+ ANOS</p>
+                  <p className="text-white font-black text-5xl tracking-tighter">10+ ANOS</p>
                   <p className="text-jl-silver font-bold text-xs uppercase tracking-[0.3em]">De Excelência no Mercado</p>
                 </div>
              </div>
@@ -199,11 +199,11 @@ export default function App() {
             <div className="space-y-6">
               <div className="flex items-center gap-4 text-jl-silver">
                 <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center"><Phone size={18}/></div>
-                <span className="font-bold text-white tracking-widest uppercase text-xs">WhatsApp Comercial</span>
+                <span className="font-bold text-white tracking-widest uppercase text-xs">(55) 9 99715-5332</span>
               </div>
               <div className="flex items-center gap-4 text-jl-silver">
                 <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center"><Mail size={18}/></div>
-                <span className="font-bold text-white tracking-widest uppercase text-xs">vello.devs@gmail.com</span>
+                <span className="font-bold text-white tracking-widest uppercase text-xs">joseleonardod3@gmail.com</span>
               </div>
             </div>
           </div>
