@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-jl-black: #050505;
+  --color-jl-gray-dark: #121212;
+  --color-jl-silver: #c0c0c2;
+  --color-jl-silver-light: #e5e7eb;
+  
+  --font-heading: "Inter", sans-serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+
+  html { scroll-behavior: smooth; }
+  body { 
+    background-color: var(--color-jl-black); 
+    color: #d1d5db;
+    font-family: var(--font-sans);
+  }
+}
+
+/* Efeito Metálico Vello Dev */
+.metallic-border {
+  border: 1px solid rgba(192, 192, 194, 0.1);
+  background: linear-gradient(145deg, rgba(20, 20, 20, 0.9) 0%, rgba(5, 5, 5, 0.9) 100%);
+}
+
+.metallic-border:hover {
+  border-color: rgba(192, 192, 194, 0.4);
+  box-shadow: 0 0 20px rgba(192, 192, 194, 0.05);
+}
+
+.text-silver-gradient {
+  background: linear-gradient(to bottom, #ffffff 0%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
