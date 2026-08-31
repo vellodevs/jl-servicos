@@ -37,5 +37,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  padding-right: 0.1em; /* Um pequeno respiro para letras itálicas */
+  /* Adiciona uma margem interna invisível para o itálico respirar */
+  padding-right: 0.2em; 
+  line-height: 1.2;
 }
