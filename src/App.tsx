@@ -75,15 +75,18 @@ export default function App() {
                 <span className="block text-silver-gradient">
                   Tecnologia
                 </span>
-
                 {/* "PARA" agora é apenas tipografia pura e elegante */}
                 <span className="block text-white/20 text-lg md:text-2xl font-bold tracking-[0.4em] my-6">
                   PARA
                 </span>
-
                 {/* pr-8 garante que a ponta do "A" ou qualquer letra inclinada apareça inteira */}
+              
                 <span className="inline-block text-silver-gradient italic pr-8">
                   Proteger seu
+                </span>
+
+                <span className="inline-block text-silver-gradient italic pr-8">
+                  seu
                 </span>
 
                 <span className="block text-silver-gradient">
