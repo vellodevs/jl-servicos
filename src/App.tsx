@@ -330,58 +330,102 @@ export default function App() {
         </div>
       </section>
 
-       {/* FOOTER */}
+      {/* FOOTER - VERSÃO FINAL ORGANIZADA PELA VELLO DEV */}
       <footer className="py-20 border-t border-white/5 bg-jl-black text-center">
         <div className="max-w-7xl mx-auto px-6">
-          <img src="/logo.png" className="h-16 mx-auto mb-8 grayscale brightness-200 opacity-80" alt="" />
-          <h3 className="text-white font-black text-2xl tracking-tighter uppercase mb-2">JL Serviços</h3>
-          <p className="text-jl-silver font-bold text-xs uppercase tracking-[0.4em] mb-12">Segurança • Tecnologia • Infraestrutura</p>
           
-          <div className="flex justify-center gap-8 mb-12">
-            {['Início', 'Sobre', 'Serviços', 'Diferenciais', 'Contato'].map(link => (
-              <a key={link} href="#" className="text-gray-500 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">{link}</a>
+          <img src="/logo.png" className="h-14 mx-auto mb-8 grayscale brightness-200 opacity-80" alt="JL Serviços" />
+          <h3 className="text-white font-black text-2xl tracking-tighter uppercase mb-2">JL Serviços</h3>
+          <p className="text-jl-silver font-bold text-[10px] uppercase tracking-[0.4em] mb-12 px-4">
+            Segurança • Tecnologia • Infraestrutura
+          </p>
+          
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-4 md:gap-x-10 mb-12 px-4">
+            {[
+              { name: 'Início', id: 'início' },
+              { name: 'Sobre', id: 'sobre' },
+              { name: 'Serviços', id: 'serviços' },
+              { name: 'Projetos', id: 'projetos' },
+              { name: 'Contato', id: 'contato' }
+            ].map((link) => (
+              <a 
+                key={link.id} 
+                href={`#${link.id}`} 
+                className="text-gray-500 hover:text-white transition-colors text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]"
+              >
+                {link.name}
+              </a>
             ))}
           </div>
 
           <div className="h-px w-full bg-white/5 mb-8"></div>
           
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-600 text-[10px] uppercase font-bold tracking-[0.2em]">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-gray-600 text-[10px] uppercase font-bold tracking-[0.15em]">
             <p>© 2026 JL Serviços - Todos os direitos reservados.</p>
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-600 text-[10px] uppercase font-bold tracking-[0.2em]">
-  
-  {/* Link da Vello Dev com assinatura visual */}
-  <p className="flex items-center gap-2">
-  <span className="text-gray-600">Desenvolvido por</span>
-  <a 
-    href="https://vello-dev.vercel.app" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-1.5 text-jl-silver hover:text-white transition-all duration-300 group"
-  >
-
-    <Zap size={12} className="text-brand-cyan fill-brand-cyan/20 group-hover:scale-110 transition-transform" />
-    
-    <span className="font-bold tracking-widest uppercase text-[10px]">
-      Vello Dev
-    </span>
-  </a>
-</p>
-</div>
+            
+            <p className="flex items-center gap-2">
+              <span className="opacity-50 font-medium">Desenvolvido por</span>
+              <a 
+                href="https://vello-dev.vercel.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-jl-silver hover:text-white transition-all group"
+              >
+                <Zap size={12} className="text-brand-cyan fill-brand-cyan/20 group-hover:scale-110 transition-transform" />
+                <span className="font-black tracking-widest">Vello Dev</span>
+              </a>
+            </p>
           </div>
         </div>
-      </footer>         
+      </footer>
 
-      {/* MOBILE DRAWER */}
+      {/* MOBILE DRAWER - POSICIONADO FORA DO FOOTER MAS DENTRO DA DIV PRINCIPAL */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[60] bg-jl-black p-8 flex flex-col items-center justify-center gap-8">
-            <button className="absolute top-8 right-8 text-white" onClick={() => setIsMobileMenuOpen(false)}><X size={32}/></button>
-            {['Início', 'Serviços', 'Projetos', 'Vídeos', 'Contato'].map(i => (
-              <a key={i} href={`#${i.toLowerCase()}`} onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-black uppercase text-white tracking-widest">{i}</a>
-            ))}
+          <motion.div 
+            initial={{ opacity: 0, x: 100 }} 
+            animate={{ opacity: 1, x: 0 }} 
+            exit={{ opacity: 0, x: 100 }} 
+            className="fixed inset-0 z-[60] bg-jl-black p-8 flex flex-col items-center justify-center gap-8"
+          >
+            <button 
+              className="absolute top-8 right-8 text-jl-silver hover:text-white transition-colors cursor-pointer" 
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <X size={40}/>
+            </button>
+
+            <nav className="flex flex-col items-center gap-6">
+              {[
+                { name: 'Início', id: 'início' },
+                { name: 'Serviços', id: 'serviços' },
+                { name: 'Projetos', id: 'projetos' },
+                { name: 'Vídeos', id: 'vídeos' },
+                { name: 'Sobre Nós', id: 'sobre' },
+                { name: 'Contato', id: 'contato' }
+              ].map((item) => (
+                <a 
+                  key={item.id} 
+                  href={`#${item.id}`} 
+                  onClick={() => setIsMobileMenuOpen(false)} 
+                  className="text-3xl font-black uppercase text-white tracking-widest hover:text-jl-silver transition-colors"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </nav>
+
+            <a 
+              href={WHATSAPP_LINK} 
+              target="_blank" 
+              className="mt-8 bg-white text-jl-black px-8 py-4 rounded-sm font-black uppercase tracking-widest hover:bg-jl-silver transition-all"
+            >
+              Falar no WhatsApp
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
-  );
-}
+
+    </div> // Fecha a div principal do site
+  ); // Fecha o return
+} // Fecha a função App
