@@ -65,9 +65,31 @@ export default function App() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-jl-silver text-[10px] font-bold uppercase tracking-widest mb-8">
               <Shield size={12} /> Engenharia em Segurança & Infraestrutura
             </div>
-            <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.1] mb-8 tracking-tighter uppercase">
-              Segurança e tecnologia para <span className="text-silver-gradient italic text-jl-silver">proteger seu patrimônio.</span>
-            </h1>
+           {/* H1 VERSÃO EXCLUSIVA VELLO DEV: SEM CLICHÊS E SEM CORTES */}
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tighter uppercase text-left py-10">
+                
+                <span className="block text-silver-gradient">
+                  Segurança e
+                </span>
+                
+                <span className="block text-silver-gradient">
+                  Tecnologia
+                </span>
+
+                {/* "PARA" agora é apenas tipografia pura e elegante */}
+                <span className="block text-white/20 text-lg md:text-2xl font-bold tracking-[0.4em] my-6">
+                  PARA
+                </span>
+
+                {/* pr-8 garante que a ponta do "A" ou qualquer letra inclinada apareça inteira */}
+                <span className="inline-block text-silver-gradient italic pr-8">
+                  Proteger seu
+                </span>
+
+                <span className="block text-silver-gradient">
+                  Patrimônio.
+                </span>
+              </h1>
             <p className="text-lg text-gray-400 max-w-xl mb-10 leading-relaxed">
               Soluções completas em monitoramento, alarmes, telecomunicações e serviços elétricos com padrão de excelência JL Serviços.
             </p>
@@ -248,8 +270,8 @@ export default function App() {
 
               {/* Card de Informações Extras */}
               <div className="p-8 rounded-3xl bg-white/2 border border-white/5 space-y-5 text-gray-400 text-sm">
-                <div className="flex items-center gap-4"><Mail size={18} className="text-jl-silver"/> contato@jlservicos.com.br</div>
-                <div className="flex items-center gap-4"><Clock size={18} className="text-jl-silver"/> Segunda a Sexta: 08h às 19h</div>
+                <div className="flex items-center gap-4"><Mail size={18} className="text-jl-silver"/> joseleonardod3@gmail.com</div>
+                <div className="flex items-center gap-4"><Clock size={18} className="text-jl-silver"/> Segunda a Sexta: 08h às 18h</div>
                 <div className="flex items-center gap-4"><ShieldCheck size={18} className="text-jl-silver"/> Garantia & Contrato Formal</div>
               </div>
             </div>

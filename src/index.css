@@ -33,7 +33,9 @@
 }
 
 .text-silver-gradient {
-  background: linear-gradient(to bottom, #ffffff 0%, #a1a1aa 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #D1D5DB 50%, #9CA3AF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding-right: 0.1em; /* Um pequeno respiro para letras itálicas */
 }
