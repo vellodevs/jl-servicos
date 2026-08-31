@@ -65,34 +65,30 @@ export default function App() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-jl-silver text-[10px] font-bold uppercase tracking-widest mb-8">
               <Shield size={12} /> Engenharia em Segurança & Infraestrutura
             </div>
-           {/* H1 VERSÃO EXCLUSIVA VELLO DEV: SEM CLICHÊS E SEM CORTES */}
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tighter uppercase text-left py-10">
-                
-                <span className="block text-silver-gradient">
-                  Segurança e
-                </span>
-                
-                <span className="block text-silver-gradient">
-                  Tecnologia
-                </span>
-                {/* "PARA" agora é apenas tipografia pura e elegante */}
-                <span className="block text-white/20 text-lg md:text-2xl font-bold tracking-[0.4em] my-6">
-                  PARA
-                </span>
-                {/* pr-8 garante que a ponta do "A" ou qualquer letra inclinada apareça inteira */}
+           {/* H1 AJUSTADO PELA VELLO DEV: SEM CORTES E SEM DUPLICAÇÃO */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tighter uppercase text-left py-10">
               
-                <span className="inline-block text-silver-gradient italic pr-8">
-                  Proteger seu
-                </span>
+              <span className="block text-silver-gradient">
+                Segurança e
+              </span>
+              
+              <span className="block text-silver-gradient">
+                Tecnologia
+              </span>
 
-                <span className="inline-block text-silver-gradient italic pr-8">
-                  seu
-                </span>
+              <span className="block text-white/20 text-lg md:text-2xl font-bold tracking-[0.4em] my-6">
+                PARA
+              </span>
 
-                <span className="block text-silver-gradient">
-                  Patrimônio.
-                </span>
-              </h1>
+              {/* inline-block + pr-16 é o segredo para o itálico não cortar */}
+              <span className="inline-block text-silver-gradient italic pr-16 mb-2">
+                Proteger seu
+              </span>
+
+              <span className="block text-silver-gradient">
+                Patrimônio.
+              </span>
+            </h1>
             <p className="text-lg text-gray-400 max-w-xl mb-10 leading-relaxed">
               Soluções completas em monitoramento, alarmes, telecomunicações e serviços elétricos com padrão de excelência JL Serviços.
             </p>
