@@ -7,10 +7,30 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// --- CONFIGURAÇÕES GERAIS ---
 const WHATSAPP_NUMBER = "5555997155332"; 
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de solicitar um orçamento com a JL Serviços.`;
+const INSTAGRAM_LINK = "https://www.instagram.com/jlservicos.info?dlrf=MWpkODBsMmx4M2RwNw=="; 
 const WEB3FORMS_KEY = "c1394ac2-dc2c-4792-bb9a-b156c9dd56f9";
+
+// Componente SVG nativo do Instagram para evitar erros de importação
+const InstagramIcon = ({ size = 18, className = "" }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+  </svg>
+);
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -56,7 +76,7 @@ export default function App() {
         </div>
       </header>
 
-      {/* HERO SECTION - LOGO ORIGINAL NO LADO DIREITO */}
+      {/* HERO SECTION */}
       <section id="início" className="relative pt-48 pb-32 overflow-hidden border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
         
@@ -65,29 +85,13 @@ export default function App() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-jl-silver text-[10px] font-bold uppercase tracking-widest mb-8">
               <Shield size={12} /> Engenharia em Segurança & Infraestrutura
             </div>
-           {/* H1 AJUSTADO PELA VELLO DEV: SEM CORTES E SEM DUPLICAÇÃO */}
+            
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tighter uppercase text-left py-10">
-              
-              <span className="block text-silver-gradient">
-                Segurança e
-              </span>
-              
-              <span className="block text-silver-gradient">
-                Tecnologia
-              </span>
-
-              <span className="block text-white/20 text-lg md:text-2xl font-bold tracking-[0.4em] my-6">
-                PARA
-              </span>
-
-              {/* inline-block + pr-16 é o segredo para o itálico não cortar */}
-              <span className="inline-block text-silver-gradient italic pr-16 mb-2">
-                Proteger seu
-              </span>
-
-              <span className="block text-silver-gradient">
-                Patrimônio.
-              </span>
+              <span className="block text-silver-gradient">Segurança e</span>
+              <span className="block text-silver-gradient">Tecnologia</span>
+              <span className="block text-white/20 text-lg md:text-2xl font-bold tracking-[0.4em] my-6">PARA</span>
+              <span className="inline-block text-silver-gradient italic pr-16 mb-2">Proteger seu</span>
+              <span className="block text-silver-gradient">Patrimônio.</span>
             </h1>
             <p className="text-lg text-gray-400 max-w-xl mb-10 leading-relaxed">
               Soluções completas em monitoramento, alarmes, telecomunicações e serviços elétricos com padrão de excelência JL Serviços.
@@ -102,7 +106,6 @@ export default function App() {
             </div>
           </motion.div>
 
-          {/* LADO DIREITO: A LOGO OFICIAL CONFORME O PEDIDO */}
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }} className="flex justify-center items-center">
             <div className="relative group p-4">
               <div className="absolute -inset-4 bg-jl-silver/10 rounded-full blur-3xl group-hover:bg-jl-silver/20 transition-all duration-1000"></div>
@@ -115,6 +118,7 @@ export default function App() {
           </motion.div>
         </div>
       </section>
+
       {/* SOBRE */}
       <section id="sobre" className="py-32 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
@@ -170,7 +174,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* VÍDEOS - CORREÇÃO DE CARREGAMENTO */}
+      {/* VÍDEOS */}
       <section id="vídeos" className="py-32 bg-jl-gray-dark border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div {...fadeIn} className="text-center mb-20">
@@ -227,18 +231,13 @@ export default function App() {
         </div>
       </section>        
 
-
-     {/* SEÇÃO DE CONTATO - VERSÃO FINAL CORRIGIDA PELA VELLO DEV */}
+      {/* SEÇÃO DE CONTATO */}
       <section id="contato" className="relative py-32 border-t border-white/5 bg-jl-black">
         <div className="max-w-7xl mx-auto px-6">
-          
-          {/* Este grid-cols-12 é o que mantém o formulário e o whats lado a lado */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
-            {/* COLUNA 01: WHATSAPP (Lado Esquerdo) */}
+            {/* COLUNA 01: WHATSAPP */}
             <div className="lg:col-span-5 space-y-6">
-              
-              {/* Card Principal: Agora em Preto/Prata (JL) */}
               <div className="p-8 rounded-3xl bg-jl-gray-dark border border-white/10 shadow-2xl relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-3xl -z-10"></div>
                 
@@ -267,7 +266,6 @@ export default function App() {
                 </a>
               </div>
 
-              {/* Card de Informações Extras */}
               <div className="p-8 rounded-3xl bg-white/2 border border-white/5 space-y-5 text-gray-400 text-sm">
                 <div className="flex items-center gap-4"><Mail size={18} className="text-jl-silver"/> joseleonardod3@gmail.com</div>
                 <div className="flex items-center gap-4"><Clock size={18} className="text-jl-silver"/> Segunda a Sexta: 08h às 18h</div>
@@ -275,7 +273,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* COLUNA 02: FORMULÁRIO (Lado Direito) */}
+            {/* COLUNA 02: FORMULÁRIO */}
             <div className="lg:col-span-7">
               <div className="p-8 md:p-12 rounded-[2.5rem] bg-jl-gray-dark border border-white/10 shadow-2xl relative overflow-hidden">
                 <form 
@@ -317,7 +315,7 @@ export default function App() {
                   
                   <button 
                     type="submit" 
-                    className="w-full py-5 rounded-2xl font-black text-jl-black bg-gradient-to-r from-jl-silver via-white to-jl-silver cursor-pointer hover:brightness-110 hover:shadow-[0_0_30px_rgba(192,192,194,0.3)] transition-all active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-50"
+                    className="w-full py-5 rounded-2xl font-black text-jl-black bg-gradient-to-r from-jl-silver via-white to-jl-silver cursor-pointer hover:brightness-110 hover:shadow-[0_0_30px_rgba(192,192,194,0.3)] transition-all active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-55"
                   >
                     Enviar Solicitação <Send size={20} />
                   </button>
@@ -329,22 +327,22 @@ export default function App() {
         </div>
       </section>
 
-      {/* FOOTER - VERSÃO FINAL ORGANIZADA PELA VELLO DEV */}
+      {/* FOOTER */}
       <footer className="py-20 border-t border-white/5 bg-jl-black text-center">
         <div className="max-w-7xl mx-auto px-6">
           
           <img src="/logo.png" className="h-14 mx-auto mb-8 grayscale brightness-200 opacity-80" alt="JL Serviços" />
-          <h3 className="text-white font-black text-2xl tracking-tighter uppercase mb-2">JL Serviços</h3>
+          <h3 className="text-white font-heading font-black text-2xl tracking-tighter uppercase mb-2">JL Serviços</h3>
           <p className="text-jl-silver font-bold text-[10px] uppercase tracking-[0.4em] mb-12 px-4">
             Segurança • Tecnologia • Infraestrutura
           </p>
           
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-4 md:gap-x-10 mb-12 px-4">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-4 md:gap-x-10 mb-8 px-4">
             {[
               { name: 'Início', id: 'início' },
               { name: 'Sobre', id: 'sobre' },
               { name: 'Serviços', id: 'serviços' },
-              { name: 'Projetos', id: 'projetos' },
+              { name: 'Vídeos', id: 'vídeos' },
               { name: 'Contato', id: 'contato' }
             ].map((link) => (
               <a 
@@ -355,6 +353,19 @@ export default function App() {
                 {link.name}
               </a>
             ))}
+          </div>
+
+          {/* ÍCONE DO INSTAGRAM */}
+          <div className="flex justify-center items-center mb-12">
+            <a 
+              href={INSTAGRAM_LINK} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-jl-silver hover:bg-white/10 transition-all shadow-md group"
+              title="Siga no Instagram"
+            >
+              <InstagramIcon size={18} />
+            </a>
           </div>
 
           <div className="h-px w-full bg-white/5 mb-8"></div>
@@ -378,7 +389,7 @@ export default function App() {
         </div>
       </footer>
 
-      {/* MOBILE DRAWER - POSICIONADO FORA DO FOOTER MAS DENTRO DA DIV PRINCIPAL */}
+      {/* MOBILE DRAWER */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div 
@@ -398,7 +409,6 @@ export default function App() {
               {[
                 { name: 'Início', id: 'início' },
                 { name: 'Serviços', id: 'serviços' },
-                { name: 'Projetos', id: 'projetos' },
                 { name: 'Vídeos', id: 'vídeos' },
                 { name: 'Sobre Nós', id: 'sobre' },
                 { name: 'Contato', id: 'contato' }
@@ -414,17 +424,29 @@ export default function App() {
               ))}
             </nav>
 
-            <a 
-              href={WHATSAPP_LINK} 
-              target="_blank" 
-              className="mt-8 bg-white text-jl-black px-8 py-4 rounded-sm font-black uppercase tracking-widest hover:bg-jl-silver transition-all"
-            >
-              Falar no WhatsApp
-            </a>
+            <div className="flex flex-col items-center gap-6 mt-4">
+              <a 
+                href={INSTAGRAM_LINK} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-2 text-gray-400 hover:text-white text-sm font-bold uppercase tracking-widest transition-colors"
+              >
+                <InstagramIcon size={20} /> Siga no Instagram
+              </a>
+
+              <a 
+                href={WHATSAPP_LINK} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white text-jl-black px-8 py-4 rounded-sm font-black uppercase tracking-widest hover:bg-jl-silver transition-all"
+              >
+                Falar no WhatsApp
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-    </div> // Fecha a div principal do site
-  ); // Fecha o return
-} // Fecha a função App
+    </div>
+  );
+}
