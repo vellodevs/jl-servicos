@@ -6,11 +6,12 @@ import {
   MessageSquare, Clock, ShieldCheck
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import.meta.env.VITE_WEB3FORMS_KEY
 
 const WHATSAPP_NUMBER = "5555997155332"; 
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de solicitar um orçamento com a JL Serviços.`;
 const INSTAGRAM_LINK = "https://www.instagram.com/jlservicos.info?dlrf=MWpkODBsMmx4M2RwNw=="; 
-const WEB3FORMS_KEY = "c1394ac2-dc2c-4792-bb9a-b156c9dd56f9";
+
 
 // Componente SVG nativo do Instagram para evitar erros de importação
 const InstagramIcon = ({ size = 18, className = "" }) => (
@@ -283,7 +284,7 @@ export default function App() {
                     const btn = e.currentTarget.querySelector('button');
                     if (btn) btn.disabled = true;
                     const formData = new FormData(e.currentTarget);
-                    formData.append("access_key", WEB3FORMS_KEY);
+                    formData.append("access_key",import.meta.env.VITE_WEB3FORMS_KEY);
                     formData.append("from_name", "JL Serviços Website");
                     formData.append("subject", `🚀 Novo Orçamento: ${formData.get("name")} - JL Serviços`);
                     formData.append("replyto", formData.get("email") as string);
@@ -319,6 +320,11 @@ export default function App() {
                   >
                     Enviar Solicitação <Send size={20} />
                   </button>
+
+                  {/* AVISO DE PRIVACIDADE */}
+                  <p className="text-gray-500 text-[11px] text-center leading-relaxed px-2">
+                    Ao enviar, você concorda que a JL Serviços utilize seus dados para entrar em contato referente a esta solicitação.
+                  </p>
                 </form>
               </div>
             </div>
